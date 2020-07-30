@@ -1,3 +1,24 @@
+if(gameover)
+{
+	if(mouse_check_button_pressed(mb_left))
+	{
+		gameover = false;
+	}
+	
+	return;
+}
+
+while(!spawned)
+{
+	x = random(room_width - self.sprite_width / 2);
+	y = random(room_height - self.sprite_height / 2);
+	
+	if(place_empty(x, y))
+	{
+		spawned = true;
+	}
+}
+
 if(state == TARGET)
 {
 	final_x = x + velocidade_x * velocidade;
@@ -20,8 +41,21 @@ if(state == TARGET)
 	
 	if(velocidade <= 0)
 	{
+		state = NULO;
 		velocidade = 0;
-		state = NULO
+		chances--;
+		
+		if(place_meeting(x, y, obj_buraco))
+		{
+			pontos++;
+			spawned = false;
+		}
+		
+		if(chances <= 0)
+		{
+			show_message("Game Over");
+			gameover = true;
+		}
 	}
 }
 

@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "64f664b8-9151-44d6-a6cb-ae9fb738e55f",
+            "Value": {
+                "id": "07dcaa97-ec72-43fd-ab4f-7ec7da447ad0",
+                "resourcePath": "fonts\\fnt_ggizi\\fnt_ggizi.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "75b5a06a-0f89-48e1-8bb1-6dd438d39006",
             "Value": {
                 "id": "6f9df453-69f9-4e0e-ae53-47e4f71dda3a",

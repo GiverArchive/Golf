@@ -1,6 +1,6 @@
 velocidade = 0;
 max_velocidade = 8;
-increment_velocidade = 0.3;
+increment_velocidade = 0.1;
 
 isPressed = false;
 
@@ -14,3 +14,8 @@ TARGET = 3;
 
 state = NULO;
 decre = false;
+
+gameover = false;
+spawned = false;
+pontos = 0;
+chances = 5;
