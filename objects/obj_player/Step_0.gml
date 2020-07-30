@@ -1,5 +1,18 @@
 if(state == TARGET)
 {
+	final_x = x + velocidade_x * velocidade;
+	final_y = y + velocidade_y * velocidade;
+	
+	if(final_x >= room_width || final_x <= 0 || !place_free(final_x, y))
+	{
+		velocidade_x *= -1;
+	}
+	
+	if(final_y >= room_height || final_y <= 0 || !place_free(x, final_y))
+	{
+		velocidade_y *= -1;
+	}
+	
 	x += velocidade_x * velocidade;
 	y += velocidade_y * velocidade;
 	
