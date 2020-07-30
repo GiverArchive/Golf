@@ -1,3 +1,17 @@
+if(state == TARGET)
+{
+	x += velocidade_x * velocidade;
+	y += velocidade_y * velocidade;
+	
+	velocidade -= 0.03;
+	
+	if(velocidade <= 0)
+	{
+		velocidade = 0;
+		state = NULO
+	}
+}
+
 if(mouse_check_button_pressed(mb_left))
 {
 	if(!isPressed)
@@ -20,7 +34,7 @@ if(isPressed)
 	}
 }
 
-if(state = FORCE)
+if(state == FORCE)
 {
 	if(!decre)
 	{
@@ -35,4 +49,13 @@ if(state = FORCE)
 	{
 		decre = !decre;
 	}
+}
+
+if(state == FINAL)
+{
+	state = TARGET;
+	angle = point_direction(x, y, mouse_x, mouse_y);
+	
+	velocidade_x = cos(degtorad(angle));
+	velocidade_y = -sin(degtorad(angle));
 }
